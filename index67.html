@@ -1,0 +1,236 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>OverCloaked</title>
+    <meta
+      name="google-site-verification"
+      content="FKRvmG_MjB2ufVbhrAHN7amRvXy_8OLKFK2EJMPpUhg"
+    />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    <link rel="icon" href="assets/img/favicon.png" />
+    <style>
+      :root {
+        --bg: #0a0b10;
+        --accent: #00f2ff;
+        --text: #4e5664;
+      }
+
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+        background: var(--bg);
+        font-family: "Courier New", monospace;
+      }
+
+      #background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        border: none;
+        z-index: 2;
+      }
+
+      #loader-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: var(--bg);
+        z-index: 10000;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .terminal-box {
+        width: 320px;
+        padding: 15px;
+        border-left: 2px solid var(--accent);
+        background: #0d0e14;
+      }
+      .status {
+        color: var(--accent);
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        margin-bottom: 8px;
+      }
+
+      .bar-bg {
+        width: 100%;
+        height: 2px;
+        background: #1a1c23;
+        position: relative;
+      }
+      .bar-fill {
+        width: 0%;
+        height: 100%;
+        background: var(--accent);
+        transition: width 0.2s ease-out;
+      }
+
+      .trigonometric identities {
+        position: absolute;
+        pointer-events: none;
+        z-index: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="trigonometric-identities">
+      <h1>Advanced Trigonometry: Unit 5 - Analytical Identities</h1>
+      <p>
+        <strong>Learning Objective:</strong> To utilize fundamental identities
+        to simplify complex trigonometric expressions and verify mathematical
+        proofs through algebraic manipulation.
+      </p>
+
+      <h3>1. The Fundamental Pythagorean Identities</h3>
+      <p>
+        The most essential identity in trigonometry is derived from the unit
+        circle, where $x^2 + y^2 = 1$. Substituting $x = \cos(\theta)$ and $y =
+        \sin(\theta)$, we arrive at:
+      </p>
+      <p style="text-align: center">$$\sin^2(\theta) + \cos^2(\theta) = 1$$</p>
+      <p>
+        From this primary identity, we can derive the secondary forms by
+        dividing by $\cos^2(\theta)$ or $\sin^2(\theta)$ respectively:
+      </p>
+      <ul>
+        <li>$1 + \tan^2(\theta) = \sec^2(\theta)$</li>
+        <li>$1 + \cot^2(\theta) = \csc^2(\theta)$</li>
+      </ul>
+
+      <h3>2. Reciprocal and Quotient Identities</h3>
+      <p>
+        Understanding the relationship between primary and reciprocal functions
+        is critical for simplification:
+      </p>
+      <p>
+        $\tan(\theta) = \frac{\sin(\theta)}{\cos(\theta)}$ | $\cot(\theta) =
+        \frac{\cos(\theta)}{\sin(\theta)}$ | $\sec(\theta) =
+        \frac{1}{\cos(\theta)}$ | $\csc(\theta) = \frac{1}{\sin(\theta)}$
+      </p>
+
+      <h3>3. Strategies for Verifying (Proving) Identities</h3>
+      <p>
+        Proving a trigonometric identity is not about "solving for x," but
+        rather demonstrating that the left side (LHS) is equivalent to the right
+        side (RHS). Follow these hierarchical strategies:
+      </p>
+      <ol>
+        <li>
+          <strong>Start with the more complex side:</strong> It is
+          mathematically easier to simplify an expression than to expand one.
+        </li>
+        <li>
+          <strong>Convert to Sines and Cosines:</strong> When in doubt, rewrite
+          all functions (tan, sec, csc) in terms of $\sin(\theta)$ and
+          $\cos(\theta)$.
+        </li>
+        <li>
+          <strong>Factor or Combine Fractions:</strong> Use a common denominator
+          to merge multiple terms into a single quotient.
+        </li>
+        <li>
+          <strong>Apply Pythagorean Substitutions:</strong> Look for squared
+          terms (like $1 - \cos^2(\theta)$) and replace them immediately.
+        </li>
+      </ol>
+
+      <h3>
+        Example Proof: Verify $\frac{\sin(\theta)}{1+\cos(\theta)} +
+        \frac{1+\cos(\theta)}{\sin(\theta)} = 2\csc(\theta)$
+      </h3>
+      <p>
+        <em>Step 1:</em> Find a common denominator:
+        $\sin(\theta)(1+\cos(\theta))$.
+      </p>
+      <p>
+        <em>Step 2:</em> Rewrite the numerator: $\sin^2(\theta) +
+        (1+\cos(\theta))^2$.
+      </p>
+      <p>
+        <em>Step 3:</em> Expand and simplify: $\sin^2(\theta) + 1 +
+        2\cos(\theta) + \cos^2(\theta)$. Since $\sin^2 + \cos^2 = 1$, the
+        numerator becomes $2 + 2\cos(\theta)$.
+      </p>
+      <p>
+        <em>Step 4:</em> Factor out the 2: $2(1+\cos(\theta))$. Cancel the
+        $(1+\cos(\theta))$ term from the numerator and denominator to get
+        $\frac{2}{\sin(\theta)}$, which equals $2\csc(\theta)$. Q.E.D.
+      </p>
+
+      <hr />
+      <p style="font-size: 11px; color: #777">
+        Reference: Stewart, J. (2024). *Calculus: Early Transcendentals*.
+        Chapter 7.2.
+      </p>
+    </div>
+
+    <div id="loader-overlay">
+      <div class="terminal-box">
+        <div id="msg" class="status">Syncing...</div>
+        <div class="bar-bg"><div id="p-bar" class="bar-fill"></div></div>
+      </div>
+    </div>
+
+    <iframe id="background" src="home.html"></iframe>
+
+    <script>
+      const bar = document.getElementById("p-bar");
+      const msg = document.getElementById("msg");
+      const overlay = document.getElementById("loader-overlay");
+      const background = document.getElementById("background");
+
+      const states = ["Handshake...", "Authenticating...", "Authorized"];
+      let progress = 0;
+
+      const fastLoad = setInterval(() => {
+        progress += 25;
+        bar.style.width = progress + "%";
+
+        if (progress === 50) msg.innerText = states[1];
+        if (progress === 100) {
+          msg.innerText = states[2];
+          clearInterval(fastLoad);
+
+          setTimeout(() => {
+            overlay.style.display = "none";
+            background.style.display = "block";
+          }, 150);
+        }
+      }, 350);
+      window.addEventListener("beforeunload", (e) => {
+        e.preventDefault();
+        e.returnValue = "";
+      });
+    </script>
+    <script src="assets/js/cloak.js"></script>
+    <script src="assets/js/tabcloak.js"></script>
+    <script src="assets/js/ga.js"></script>
+    <script src="assets/js/theme.js"></script>
+    <script>
+      if (
+        window.location.hostname === "overcloaked.org" ||
+        window.location.hostname === "www.overcloaked.org"
+      ) {
+        var script = document.createElement("script");
+        script.async = true;
+        script.src =
+          "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7648886706850999";
+        script.crossOrigin = "anonymous";
+        document.head.appendChild(script);
+      }
+    </script>
+  </body>
+</html>
